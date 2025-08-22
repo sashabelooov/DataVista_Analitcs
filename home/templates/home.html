@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Home - DataVista{% endblock %}
+
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Advanced Analytics for Online Marketplaces</h1>
+            <p>Gain actionable insights from Uzum, Ozon, and other marketplaces with our powerful analytics platform</p>
+            <button class="btn btn-primary">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Analytics Dashboard Section -->
+    <section class="container">
+        <h2 class="section-title">Marketplace Analytics Dashboard</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-store stat-icon"></i>
+                <div class="stat-value">12,458</div>
+                <div class="stat-label">Total Products Tracked</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-bar stat-icon"></i>
+                <div class="stat-value">$3.2M</div>
+                <div class="stat-label">Monthly Sales Volume</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users stat-icon"></i>
+                <div class="stat-value">2,847</div>
+                <div class="stat-label">Active Sellers Monitored</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-bolt stat-icon"></i>
+                <div class="stat-value">98.3%</div>
+                <div class="stat-label">Data Accuracy</div>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3 class="card-title">Sales Performance</h3>
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Marketplace Share</h3>
+                <div class="chart-container">
+                    <canvas id="marketShareChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Category Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

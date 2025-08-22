@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <i class="fas fa-chart-line"></i>
+            <span>DataVista</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'markets' %}">MarketPlaces</a></li>
+            <li><a href="#">AboutUs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+        <div class="nav-buttons">
+            <div class="dropdown">
+                <button class="btn btn-outline"><i class="fas fa-globe"></i> EN</button>
+                <div class="dropdown-content">
+                    <a href="#">UZ</a>
+                    <a href="#">ENG</a>
+                    <a href="#">RU</a>
+                </div>
+            </div>
+            
+            <button class="btn btn-outline" id="theme-toggle"><i class="fas fa-moon"></i></button>
+            
+            <button class="btn btn-outline">Login</button>
+            <button class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</nav>

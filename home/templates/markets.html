@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Online - Marketplace{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">🌍 Marketplaces</h2>
+    <div class="row">
+        {% for m in marketplaces %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ m.image.url }}" class="card-img-top" alt="{{ m.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ m.name }}</h5>
+                    <p class="card-text">
+                        <strong>Davlat:</strong> {{ m.country }} <br>
+                        <strong>Ochilgan:</strong> {{ m.created_at|date:"d M Y" }}
+                    </p>
+                    <a href="{{ m.link }}" class="btn btn-primary" target="_blank">
+                        🔗 Tashrif buyurish
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">Hech qanday marketplace qo‘shilmagan.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
