@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from home.models import Marketplace, Product, Shop
 from django.db.models import Q
 import matplotlib.pyplot as plt
@@ -6,6 +6,8 @@ import seaborn as sns
 from io import BytesIO
 import base64
 import matplotlib
+from ozon.views import ozon_catalog
+from django.core.exceptions import ValidationError
 
 
 
@@ -14,6 +16,8 @@ def uzum_catalog(request, marketplace_id):
 
     if marketplace.id == 1:  # faqat Uzum (id=1)
         return render(request, 'uzum_catalog.html', {'marketplace': marketplace})
+    elif marketplace.id == 2:
+            return redirect(ozon_catalog, marketplace_id=marketplace.id)
     else:
         marketplaces = Marketplace.objects.all()
         return render(request, 'markets.html', {
@@ -22,7 +26,7 @@ def uzum_catalog(request, marketplace_id):
     
 
 
-from django.core.exceptions import ValidationError
+
 
 def product_list(request, marketplace_id=None):
     # Get the marketplace or use all marketplaces
