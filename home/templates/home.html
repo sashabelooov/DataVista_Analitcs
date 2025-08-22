@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Advanced Analytics for Online Marketplaces</h1>
@@ -61,4 +61,108 @@
             </div>
         </div>
     </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About DataVista</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transforming Marketplace Data into Strategic Insights</h3>
+                    <p>DataVista was founded in 2020 with a mission to empower e-commerce businesses with actionable intelligence from marketplace data. Our platform aggregates and analyzes information from leading marketplaces including Uzum, Ozon, Wildberries, and more.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Our Mission</h4>
+                            <p>To provide accurate, real-time analytics that help sellers optimize their performance across multiple marketplaces.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <h4>Our Vision</h4>
+                            <p>To become the leading analytics platform for marketplace sellers in Central Asia and beyond.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Our Values</h4>
+                            <p>Data accuracy, customer success, and innovation drive everything we do.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="DataVista team analyzing data">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Have questions or want to learn more about our services? Get in touch with our team.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Analytics Street, Tashkent, Uzbekistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+998 71 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@datavista.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> 
+
 {% endblock %}

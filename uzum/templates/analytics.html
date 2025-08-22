@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4">
+  <h3 class="text-center mb-4">📊 Eng arzon va eng qimmat telefonlar</h3>
+
+  {% if img_minmax %}
+    <div class="text-center mb-4">
+      <img src="{{ img_minmax }}" class="img-fluid" alt="Min/Max">
+      <p class="mt-2"><b>Eng arzon:</b> {{ min_product.title }} — {{ min_product.price }} so‘m</p>
+      <p class="mt-1"><b>Eng qimmat:</b> {{ max_product.title }} — {{ max_product.price }} so‘m</p>
+    </div>
+  {% else %}
+    <div class="alert alert-warning text-center">Mahsulotlar topilmadi.</div>
+  {% endif %}
+
+  <div class="row g-4">
+    <div class="col-md-6 text-center">
+      {% if img_rating %}
+        <img src="{{ img_rating }}" class="img-fluid" alt="Reyting taqsimoti">
+      {% else %}
+        <div class="alert alert-secondary">Reyting ma’lumotlari yo‘q.</div>
+      {% endif %}
+    </div>
+    <div class="col-md-6 text-center">
+      {% if img_top_comments %}
+        <img src="{{ img_top_comments }}" class="img-fluid" alt="Top izohlar">
+      {% else %}
+        <div class="alert alert-secondary">Izohlar ma’lumotlari yo‘q.</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

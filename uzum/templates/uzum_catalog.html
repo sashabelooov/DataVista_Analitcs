@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}DataVista - Online Marketplace{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="sidebar">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-fire me-2"></i> Hafta mahsulotlari
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-mobile-alt me-2"></i> Elektronika
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tshirt me-2"></i> Kiyim-kechak
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-shoe-prints me-2"></i> Oyoq kiyim
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-gem me-2"></i> Aksessuarlar
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-home me-2"></i> Uy-ro'zg'or buyumlari
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tools me-2"></i> Qurilish va ta'mirlash
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-car me-2"></i> Avtotovarlar
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-baby me-2"></i> Bolalar tovarlari
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-heart me-2"></i> Go'zallik va salomatlik
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-utensils me-2"></i> Oziq-ovqat mahsulotlari
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-paw me-2"></i> Hayvonlar uchun tovarlar
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-book me-2"></i> Kitoblar va kantsevarlar
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-futbol me-2"></i> Sport va hordiq
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-gamepad me-2"></i> O'yinchoqlar va hobi
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content: Only Elektronika category -->
+        <div class="col-md-9">
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <h5>Smartfonlar va telefonlar</h5>
+                        <ul>
+                            <li><a href="{% url 'product_list' %}">Smartfonlar</a></li>
+                            <li><a href="#">Tugmali telefonlar</a></li>
+                            <li><a href="#">Smartfonlar uchun aksessuarlar</a></li>
+                            <li><a href="#">Ehtiyot qismlar va ta'mirlash</a></li>
+                            <li><a href="#">Statsionar telefonlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Noutbuklar, planshetlar va elektron kitoblar</h5>
+                        <ul>
+                            <li><a href="#">Noutbuklar</a></li>
+                            <li><a href="#">Planshetlar va elektron kitoblar</a></li>
+                            <li><a href="#">Noutbuklar uchun aksessuarlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Televizorlar va video texnika</h5>
+                        <ul>
+                            <li><a href="#">Televizorlar</a></li>
+                            <li><a href="#">Tunerlar va qabul qilgichlar</a></li>
+                            <li><a href="#">Televizorlar uchun aksessuarlar</a></li>
+                            <li><a href="#">DVD va Blu-ray pleerlar</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <h5>Quloqchinlar va audio texnika</h5>
+                        <ul>
+                            <li><a href="#">Quloqchinlar</a></li>
+                            <li><a href="#">Audio texnika</a></li>
+                            <li><a href="#">Pleerlar uchun aksessuarlar</a></li>
+                            <li><a href="#">Periferiya va aksessuarlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Oʻyin konsollari va oʻyinlar</h5>
+                        <ul>
+                            <li><a href="#">Oʻyin konsollari</a></li>
+                            <li><a href="#">Videooʻyinlar</a></li>
+                            <li><a href="#">Aksessuarlar va ehtiyot qismlar</a></li>
+                            <li><a href="#">VR-uskunalar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Foto va video texnika</h5>
+                        <ul>
+                            <li><a href="#">Foto va video kameralar</a></li>
+                            <li><a href="#">Obektivlar</a></li>
+                            <li><a href="#">Fotosurat uskunalari</a></li>
+                            <li><a href="#">Kamerlar uchun aksessuarlar</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <h5>Elektronika uchun aksessuarlar</h5>
+                        <ul>
+                            <li><a href="#">USB-haydovchilar</a></li>
+                            <li><a href="#">Zaryadlovchi qurilmalar</a></li>
+                            <li><a href="#">Kabel va adapterlar</a></li>
+                            <li><a href="#">Konnektorlar</a></li>
+                            <li><a href="#">Boshqa aksessuarlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Aqlli soatlar va fitnes-brasletlar</h5>
+                        <ul>
+                            <li><a href="#">Aqlli soatlar</a></li>
+                            <li><a href="#">Fitnes-brasletlar</a></li>
+                            <li><a href="#">Kabel va zaryadlovchilar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h5>Ofis texnikasi</h5>
+                        <ul>
+                            <li><a href="#">Printerlar va skanerlar</a></li>
+                            <li><a href="#">Kalkulyatorlar</a></li>
+                            <li><a href="#">Laminatorlar va destruktorlar</a></li>
+                            <li><a href="#">Proektorlar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

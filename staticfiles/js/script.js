@@ -1,37 +1,31 @@
-// static/js/script.js
-
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        themeToggle.innerHTML = document.body.classList.contains('dark-mode')
-            ? '<i class="fas fa-sun"></i>'
-            : '<i class="fas fa-moon"></i>';
-    });
-}
-
-// Charts
-document.addEventListener('DOMContentLoaded', function() {
-    // Sales Chart
-    const salesCtx = document.getElementById('salesChart');
-    if (salesCtx) {
-        new Chart(salesCtx.getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Sales ($)',
-                    data: [125000, 150000, 175000, 140000, 195000, 230000],
-                    borderColor: '#2563eb',
-                    tension: 0.3,
-                    fill: true,
-                    backgroundColor: 'rgba(37, 99, 235, 0.1)'
-                }]
-            },
-            options: { responsive: true, maintainAspectRatio: false }
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
         });
-    }
 
-    // boshqa chartlarni ham shu yerga o‘tkaz
-});
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server here
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Placeholder charts (in a real app, you would use Chart.js or similar)
+        document.addEventListener('DOMContentLoaded', function() {
+            const charts = document.querySelectorAll('canvas');
+            charts.forEach(chart => {
+                const ctx = chart.getContext('2d');
+                ctx.fillStyle = '#e5e7eb';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Chart would render here', chart.width/2, chart.height/2);
+            });
+        });

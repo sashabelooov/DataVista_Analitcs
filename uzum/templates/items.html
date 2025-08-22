@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    
+    <!-- Chap panel: Filter -->
+    <div class="col-md-3">
+      
+      <!-- Narx filter -->
+      <div class="card p-3 mb-4">
+        <h5 class="fw-bold">Narx filtri</h5>
+        <form method="get" action="{% url 'product_list' %}">
+          <input type="number" class="form-control mb-2" name="min_price" placeholder="Narxdan"
+                 value="{{ request.GET.min_price }}">
+          <input type="number" class="form-control mb-2" name="max_price" placeholder="Narxgacha"
+                 value="{{ request.GET.max_price }}">
+          <button class="btn btn-primary w-100 mb-2" type="submit">Filter</button>
+          <a href="{% url 'product_list' %}" class="btn btn-outline-secondary w-100">✖ Tozalash</a>
+        </form>
+      </div>
+
+      <!-- Qidiruv -->
+      <div class="card p-3">
+        <h5 class="fw-bold">Qidiruv</h5>
+        <form method="get" action="{% url 'product_list' %}">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" placeholder="Mahsulot qidirish..." name="q" value="{{ request.GET.q }}">
+            <button class="btn btn-primary" type="submit">Qidirish</button>
+          </div>
+          {% if request.GET.q %}
+            <!-- faqat qidiruvdan keyin chiqadi -->
+            <a href="{% url 'product_list' %}" class="btn btn-outline-secondary w-100">✖ Tozalash</a>
+          {% endif %}
+        </form>
+      </div>
+
+        <div class="text-center my-3">
+            <a href="{% url 'marketplace_analytics' %}" class="btn btn-outline-danger btn-lg fw-bold px-4">
+                📊 Analitika
+            </a>
+        </div>
+
+
+
+
+    </div>
+
+    <!-- O‘ng taraf: Mahsulotlar -->
+    <div class="col-md-9">
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            {% if product.image %}
+              <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+            {% else %}
+              <img src="{% static 'images/no-image.png' %}" class="card-img-top" alt="No image">
+            {% endif %}
+
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">
+                Narxi: {{ product.price }} so‘m <br>
+                Reyting: {{ product.rating|floatformat:1 }} <br>
+                Izohlar: {{ product.comment_number }} <br>
+                Rangi: {{ product.color }}
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0 text-center">
+              <a href="#" class="btn btn-primary w-100">Batafsil</a>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+          <div class="alert alert-warning">Hech qanday mahsulot topilmadi.</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
